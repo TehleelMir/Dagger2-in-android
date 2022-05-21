@@ -6,8 +6,13 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class DieselEngineModule {
+class DieselEngineModule
+    constructor(
+        private val horsePower: Int
+    ) {
 
     @Provides
-    fun providesDieselEngine(dieselEngine: DieselEngine): Engine = dieselEngine
+    fun providesDieselEngine(): Engine {
+        return DieselEngine(horsePower)
+    }
 }

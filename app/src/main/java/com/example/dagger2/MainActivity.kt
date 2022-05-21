@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.dagger2.car.Car
 import com.example.dagger2.dagger.DaggerCarComponent
+import com.example.dagger2.dagger.DieselEngineModule
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -23,7 +24,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun injectThis() {
-        DaggerCarComponent.create()
+        DaggerCarComponent.builder()
+            .dieselEngineModule(DieselEngineModule(32))
+            .build()
             .injectMainActivity(this)
     }
 }
