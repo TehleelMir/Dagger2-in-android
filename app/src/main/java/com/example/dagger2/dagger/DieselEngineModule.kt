@@ -1,6 +1,7 @@
-package com.example.dagger2
+package com.example.dagger2.dagger
 
-import dagger.Binds
+import com.example.dagger2.car.DieselEngine
+import com.example.dagger2.car.Engine
 import dagger.Module
 import dagger.Provides
 
