@@ -6,11 +6,12 @@ import javax.inject.Inject
 class Car
     @Inject
     constructor(
-    val engine: Engine,
-    val wheels: Wheels
+        private val engine: Engine,
+        private val wheels: Wheels
 ) {
 
     fun drive() {
+        engine.start()
         Log.i("here22", "Driving...")
     }
 
