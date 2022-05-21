@@ -13,4 +13,9 @@ class Car
     fun drive() {
         Log.i("here22", "Driving...")
     }
+
+    @Inject
+    fun enableRemote(remote: Remote) {
+        remote.setListener(this)
+    }
 }
