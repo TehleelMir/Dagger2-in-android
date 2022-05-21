@@ -25,7 +25,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun injectThis() {
         DaggerCarComponent.builder()
-            .dieselEngineModule(DieselEngineModule(32))
+            .horsePower(323)
+            .fuelCapacity(1000)
             .build()
             .injectMainActivity(this)
     }

@@ -4,6 +4,7 @@ import android.util.Log
 import javax.inject.Inject
 
 class DieselEngine
+    @Inject
     constructor(
         private val horsePower: Int
     ): Engine {

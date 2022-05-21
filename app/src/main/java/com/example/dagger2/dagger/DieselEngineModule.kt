@@ -12,7 +12,8 @@ class DieselEngineModule
     ) {
 
     @Provides
-    fun providesDieselEngine(): Engine {
-        return DieselEngine(horsePower)
-    }
+    fun provideHorsePower() = horsePower
+
+    @Provides
+    fun providesDieselEngine(dieselEngine: DieselEngine): Engine = dieselEngine
 }
