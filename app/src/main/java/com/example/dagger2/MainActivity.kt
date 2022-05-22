@@ -12,6 +12,9 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var car: Car
 
+    @Inject
+    lateinit var car2: Car
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun init() {
         car.drive()
+        car2.drive()
     }
 
     private fun injectThis() {

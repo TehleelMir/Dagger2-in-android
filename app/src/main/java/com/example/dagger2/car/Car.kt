@@ -7,12 +7,13 @@ class Car
     @Inject
     constructor(
         private val engine: Engine,
-        private val wheels: Wheels
+        private val wheels: Wheels,
+        private val driver: Driver
 ) {
 
     fun drive() {
         engine.start()
-        Log.i("here22", "Driving...")
+        Log.i("here22", "$driver Driving... $this")
     }
 
     @Inject
