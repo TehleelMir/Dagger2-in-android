@@ -29,7 +29,10 @@ class MainActivity : AppCompatActivity() {
     private fun injectThis() {
         (application as MyApplication)
             .appComponent
-            .activityComponent(DieselEngineModule(3232))
+            .activityComponentBuilder()
+            .horsePower(32322)
+            .fuelCapacity(32322)
+            .build()
             .injectMainActivity(this)
     }
 }
