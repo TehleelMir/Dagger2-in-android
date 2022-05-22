@@ -1,8 +1,10 @@
 package com.example.dagger2.car
 
 import android.util.Log
+import com.example.dagger2.dagger.ActivityScope
 import javax.inject.Inject
 
+@ActivityScope
 class Car
     @Inject
     constructor(

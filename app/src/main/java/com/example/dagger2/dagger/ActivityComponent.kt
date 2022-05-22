@@ -4,13 +4,11 @@ import com.example.dagger2.MainActivity
 import com.example.dagger2.car.Car
 import dagger.BindsInstance
 import dagger.Component
-import java.lang.annotation.Native
 import javax.inject.Named
-import javax.inject.Singleton
 
-@Singleton
-@Component(modules = [WheelsModule::class, PetrolEngineModule::class])
-interface CarComponent {
+@ActivityScope
+@Component(dependencies = [AppComponent::class], modules = [WheelsModule::class, PetrolEngineModule::class])
+interface ActivityComponent {
 
     fun getCar(): Car
 
@@ -31,6 +29,8 @@ interface CarComponent {
             fuelCapacity: Int
         ): Builder
 
-        fun build(): CarComponent
+        fun appComponent(appComponent: AppComponent): Builder
+
+        fun build(): ActivityComponent
     }
 }
